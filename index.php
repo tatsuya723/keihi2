@@ -41,7 +41,7 @@ if($_POST["NAM"]!="" || $_POST["PRICE"]!="" || $_POST["TYPE"]!="" || $_POST["yea
 
     if($_POST["PRICE"]==""){    //出費入力がない場合、登録できないようにする。入力内容は保存しておく
 ?>
-        <form name="入力" method="post" action="入力.php">
+        <form name="入力" method="post" action="index.php">
            
            <font size="4" color="#000000">タイトル:</font><br>
            <input type="text" name="NAM" value="<?=htmlspecialchars($_POST["NAM"])?>"> 
@@ -138,7 +138,7 @@ if($_POST["NAM"]!="" || $_POST["PRICE"]!="" || $_POST["TYPE"]!="" || $_POST["yea
         $PRICE=$_POST["PRICE"];
         
 ?>
-    <form name="入力" method="post" action="入力.php">
+    <form name="入力" method="post" action="index.php">
        
        <font size="4" color="#000000">タイトル:</font><br>
        <input type="text" name="NAM"> 
@@ -256,7 +256,7 @@ if($_POST["NAM"]!="" || $_POST["PRICE"]!="" || $_POST["TYPE"]!="" || $_POST["yea
         }
 
         //データベースへの書き込み処理
-        $sql_insert="INSERT INTO syuppi VALUES('NAM=?', 'PRICE=?', 'TYPE=?' , 'year=?' , 'month=?' , 'day=?' , 'ymd=?') ";
+        $sql_insert="INSERT INTO syuppi(NAM,PRICE,TYPE,year,month,day,ymd) VALUES('?','?','?','?','?','?','?')";
         try{
             $stmh=$pdo->prepare($sql_insert);
             $stmh->execute(array($NAM,$PRICE,$TYPE,$Y,$M,$D,$YMD));
@@ -269,7 +269,7 @@ if($_POST["NAM"]!="" || $_POST["PRICE"]!="" || $_POST["TYPE"]!="" || $_POST["yea
 //全て空白(初期画面)
 }else{
 ?>
-    <form name="入力" method="post" action="入力.php">
+    <form name="入力" method="post" action="index.php">
        
        <font size="4" color="#000000">タイトル:</font><br>
        <input type="text" name="NAM"> 
