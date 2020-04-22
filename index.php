@@ -359,7 +359,7 @@ if($_POST["NAM"]!="" || $_POST["PRICE"]!="" || $_POST["TYPE"]!="" || $_POST["yea
        <input type="submit" value="送信">
     </form>
 <?php
-
+/*
     $sql_insert="INSERT INTO syuppi(NAM,PRICE,TYPE,year,month,day,ymd) VALUES('?','?','?','?','?','?','?')";
 
     try{
@@ -369,7 +369,7 @@ if($_POST["NAM"]!="" || $_POST["PRICE"]!="" || $_POST["TYPE"]!="" || $_POST["yea
     }catch(PDOException $Exception){
         print　"エラー";
     }
-}
+}*/
 ?>
 
 </body>
