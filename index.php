@@ -20,6 +20,11 @@
             background-position: 0% 50%;
         }
     }
+
+    h1 {
+        text-align:center;
+    }
+
     </style>
   </head>
   <body>
