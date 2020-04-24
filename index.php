@@ -2,7 +2,7 @@
   <head>
     <title>a</title>
     <meta charset="utf-8">
-    <link_rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
  
  
