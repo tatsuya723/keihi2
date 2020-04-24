@@ -30,7 +30,7 @@
   <body>
 
     <h1 class="text-light">Pure CSS Animated Gradient Background</h1>
-
+    <h1 class="text-light">出来事を共有しましょう</h1>
 
 
 
