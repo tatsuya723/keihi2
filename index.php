@@ -21,6 +21,20 @@
         }
     }
 
+    .box11{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    }
+    .box11 p {
+        margin: 0; 
+        padding: 0;
+    }
+
+
     h1 {
         text-align:center;
     }
@@ -30,12 +44,15 @@
 
     </style>
   </head>
+ 
+ 
+ 
   <body>
     <br>
     <h1 class="text-light">Pure CSS Animated Gradient Background</h1>
     <h1 class="text-light">出来事を共有しましょう</h1>
 
-    <form name="form1" method="post" action="index.php" enctype="multipart/form-data">
+    <form name="form1" method="post" action="index.php" enctype="multipart/form-data" class="box11">
     <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
     画像を選択：<input type="file" name="upfile"><br>
     コメント：<input type="text" name="comment"><br>
