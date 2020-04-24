@@ -16,7 +16,7 @@
     <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
     画像を選択：<input type="file" name="upfile"><br>
     コメント：<input type="text" name="comment"><br>
-    パスワード：<input type="text" name="pass"><br>
+    パスワード(4ケタ)：<input type="text" name="pass" maxlength="4"><br>
     <input type="submit" value="投稿する"><br>
 
 
