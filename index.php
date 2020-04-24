@@ -14,10 +14,10 @@
 
     <form name="form1" method="post" action="index.php" enctype="multipart/form-data" class="box11">
     <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
-    画像を選択<br><input type="file" name="upfile"><br>
-    <br>コメント<br>：<textarea name="comment" rows="5" cols="50"></textarea><br>
-    <br>パスワード(4ケタ)<br><input type="text" name="pass" maxlength="4"><br>
-    <input type="submit" value="投稿する"><br>
+    画像を選択：<input type="file" name="upfile"><br>
+    <br>コメント<br><textarea name="comment" rows="5" cols="50"></textarea><br>
+    <br>パスワード(4ケタ)：<input type="text" name="pass" maxlength="4"><br>
+    <br><input type="submit" value="投稿する"><br>
 
 
     </form>
