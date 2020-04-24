@@ -75,12 +75,13 @@ $imgg="/images//";
 $imgg2=$imgg."pika.jpg";
 
 ?>
+<p>
 <br><IMG src="<?=$imgg2?>" width="500" height="auto"><br>
 <br><IMG src="<?=$imgg2?>" width="500" height="auto"><br>
 <br><IMG src="<?=$imgg2?>" width="500" height="auto"><br>
 <br><IMG src="<?=$imgg2?>" width="500" height="auto"><br>
 <br><IMG src="<?=$imgg2?>" width="500" height="auto"><br>
-
+</p>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
