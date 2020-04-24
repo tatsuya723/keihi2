@@ -15,7 +15,7 @@
     <form name="form1" method="post" action="index.php" enctype="multipart/form-data" class="box17">
     <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
     画像を選択：<input type="file" name="upfile"><br>
-    コメント：<textarea name="comment"></textarea><br>
+    コメント：<textarea name="comment" rows="5" cols="50"></textarea><br>
     パスワード(4ケタ)：<input type="text" name="pass" maxlength="4"><br>
     <input type="submit" value="投稿する"><br>
 
