@@ -75,7 +75,7 @@ $imgg="/images//";
 $imgg2=$imgg."pika.jpg";
 
 ?>
-<br><IMG src="<?=$imgg2?>" width="55" height="auto"><br>
+<br><IMG src="<?=$imgg2?>" width="700" height="auto"><br>
 
 
 
