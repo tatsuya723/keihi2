@@ -87,6 +87,7 @@ body {
     padding: 20px;
 }
 .card {
+    max-width: 50%;
     text-align: center;
     width: 500px;
     height: 700px;
