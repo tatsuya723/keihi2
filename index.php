@@ -48,7 +48,7 @@ try{
 //１.画像と名前とパスワードが入力されていた場合
 if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
     //画像の保存処理
-    $file_dir='C:\Users\Owner\Documents\keihi2\images\\';
+    $file_dir="C:\Users\Owner\Documents\keihi2\images\\";
     $file_path=$file_dir.$_FILES["upfile"]["name"];
     move_uploaded_file($_FILES["upfile"]["tmp_name"],$file_path);//imagesに画像を保存
 
@@ -58,15 +58,16 @@ if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
     $M=date('m',$T);
     $D=date('d',$T);
     $YMD="$Y/$M/$D";
+    print $YMD;
     $img_path="/images//".$_FILES["upfile"]["name"];    //画像のpath
-    $sql_insert="INSERT INTO PU(link,nam,com,pass,year,month,day,ymd)VALUES('.$img_path.','.$_POST["name"].','.$_POST["comment"].','.$_POST["pass"].','.$Y.','.$M.','.$D.','.$YMD.')";
+    /*$sql_insert="INSERT INTO PU(link,nam,com,pass,year,month,day,ymd)VALUES('.$img_path.','.$_POST["name"].','.$_POST["comment"].','.$_POST["pass"].','.$Y.','.$M.','.$D.','.$YMD.')";
     try{
         $stmh=$pdo->query($sql_insert);
         //$stmh->execute(array($img_path,$_POST["name"],$_POST["comment"],$_POST["pass"],$Y,$M,$D,$YMD));
         $stmh->execute();   
     }catch(PDOException $Exception){
         print　"エラー";
-    }
+    }*/
 
 }elseif($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]==""){
     print "パスワードを入力してください。";
