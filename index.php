@@ -108,11 +108,11 @@ $arlength=count($rs);
 foreach($rs as $row){
     if(($arlength-$count)<10){
 ?>
-        <form name="formxx" class="box.17">
+        <section class="box.17">
         <IMG src="<?=$row["link"]?>" width="500" height="auto"><br>
 
         name:<?=$row["nam"]?>　　　　　data:<?=$row["ymd"]?><br>
-        <?=$row["com"]?></form>
+        <?=$row["com"]?></section>
         <br><br><br><br><br><br>
 <?php
     }
