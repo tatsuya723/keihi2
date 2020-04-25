@@ -60,15 +60,17 @@ if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
     $YMD="$Y/$M/$D";
     print $YMD;
     $img_path="/images//".$_FILES["upfile"]["name"];    //画像のpath
-    /*//$sql_in="INSERT INTO PU(link, nam, com, pass, year, month, day, ymd)VALUES('$img_path', '$_POST["name"]' ,'$_POST["comment"]', '$_POST["pass"]', '$Y', '$M', '$D', '$YMD')";
-    $sql_in="INSERT INTO PU(link, nam, com, pass, y, m, d, ymd)VALUES(:link, :nam, :com, :pass, :y, :m, :d, :ymd)";
+    //$sql_in="INSERT INTO PU(link, nam, com, pass, year, month, day, ymd)VALUES('$img_path', '$_POST["name"]' ,'$_POST["comment"]', '$_POST["pass"]', '$Y', '$M', '$D', '$YMD')";
+    //$sql_in="INSERT INTO PU(link, nam, com, pass, y, m, d, ymd)VALUES(:link, :nam, :com, :pass, :y, :m, :d, :ymd)";
+    $sql_in="INSERT INTO PU(link, nam, com, pass, y, m, d, ymd)VALUES(?,?,?,?,?,?,?,?)";
     try{
         $stmh=$pdo->prepare($sql_in);
-        $stmh->execute(array(':link'=>$img_path,':nam'=>$_POST["name"],':com'=>$_POST["comment"],':pass'=>$_POST["pass"],':y'=>$Y,':m'=>$M,':d'=>$D,':ymd'=>$YMD));
+        //$stmh->execute(array(':link'=>$img_path,':nam'=>$_POST["name"],':com'=>$_POST["comment"],':pass'=>$_POST["pass"],':y'=>$Y,':m'=>$M,':d'=>$D,':ymd'=>$YMD));
+        $stmh->execute(array($img_path,$_POST["name"],$_POST["comment"],$_POST["pass"],$Y,$M,$D,$YMD));
         //$stmh->execute();   
     }catch(PDOException $Exception){
         print　"エラー";
-    }*/
+    }
 
 }elseif($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]==""){
     print "パスワードを入力してください。";
@@ -94,8 +96,8 @@ if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
 //PUテーブルから投稿を全て取得。
 $tab_select="SELECT * FROM PU";
 try{
-    $stmh=$pdo->query($tab_select);
-    $stmh->execute();
+    $stmh2=$pdo->query($tab_select);
+    $stmh2->execute();
 }catch(PDOException $Exception){
     print "エラー:"."データテーブルが見つかりません。<br>";       
 }
@@ -104,7 +106,7 @@ $T=time();
 $Y=date('Y',$T);
 $M=date('m',$T);
 $D=date('d',$T);*/
-$rs=$stmh->fetchall();
+$rs=$stmh2->fetchall();
 $count=1;
 $arlength=count($rs);
 foreach($rs as $row){
