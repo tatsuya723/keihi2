@@ -109,10 +109,10 @@ foreach($rs as $row){
     if(($arlength-$count)<10){
 ?>
         <section class="box.17">
-        <IMG src="<?=$row["link"]?>" width="500" height="auto"><br>
-
-        name:<?=$row["nam"]?>　　　　　data:<?=$row["ymd"]?><br>
-        <?=$row["com"]?></section>
+            <IMG class="card-img" src="<?=$row["link"]?>" width="500" height="auto"><br>
+            <p class="card-text1">name:<?=$row["nam"]?>　　　　　data:<?=$row["ymd"]?></p><br>
+            <p class="card-text2"><?=$row["com"]?></p><br>
+        </section>
         <br><br><br><br><br><br>
 <?php
     }
