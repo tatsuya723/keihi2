@@ -109,7 +109,7 @@ foreach($rs as $row){
     if(($arlength-$count)<10){
 ?>
         <p>
-        <IMG src="/images/pika.jpg" width="500" height="auto">
+        <IMG src="<?=$row["link"]?>" width="500" height="auto">
         </p>
 <?php
     }
