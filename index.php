@@ -110,7 +110,7 @@ foreach($rs as $row){
 ?>
         <section class="box.17">
             <IMG class="card-img" src="<?=$row["link"]?>"><br>
-            <p ><font class="card-text0">name:<?=$row["nam"]?></font>　　　　　<font class="card-text1">data:<?=$row["ymd"]?></font></p>
+            <p><font class="card-text0">name:<?=$row["nam"]?></font>　　　　　<font class="card-text1">data:<?=$row["ymd"]?></font></p>
             <p class="card-text2"><?=$row["com"]?></p><br>
 
         </section>
