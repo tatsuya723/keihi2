@@ -61,10 +61,10 @@ if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
     print $YMD;
     $img_path="/images//".$_FILES["upfile"]["name"];    //画像のpath
     //$sql_in="INSERT INTO PU(link, nam, com, pass, year, month, day, ymd)VALUES('$img_path', '$_POST["name"]' ,'$_POST["comment"]', '$_POST["pass"]', '$Y', '$M', '$D', '$YMD')";
-    $sql_in="INSERT INTO PU(link, nam, com, pass, year, month, day, ymd)VALUES(:link, :nam, :com, :pass, :year, :month, :day, :ymd)";
+    $sql_in="INSERT INTO PU(link, nam, com, pass, y, m, d, ymd)VALUES(:link, :nam, :com, :pass, :y, :m, :d, :ymd)";
     try{
         $stmh=$pdo->prepare($sql_in);
-        $stmh->execute(array(':link'=>$img_path,':nam'=>$_POST["name"],':com'=>$_POST["comment"],':pass'=>$_POST["pass"],':year'=>$Y,':month'=>$M,':day'=>$D,':ymd'=>$YMD));
+        $stmh->execute(array(':link'=>$img_path,':nam'=>$_POST["name"],':com'=>$_POST["comment"],':pass'=>$_POST["pass"],':y'=>$Y,':m'=>$M,':d'=>$D,':ymd'=>$YMD));
         //$stmh->execute();   
     }catch(PDOException $Exception){
         print　"エラー";
