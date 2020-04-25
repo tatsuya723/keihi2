@@ -97,22 +97,22 @@ try{
 }catch(PDOException $Exception){
     print "エラー:"."データテーブルが見つかりません。<br>";       
 }
-//日付を取得
+/*日付を取得
 $T=time();          
 $Y=date('Y',$T);
 $M=date('m',$T);
-$D=date('d',$T);
+$D=date('d',$T);*/
 $rs=$stmh->fetchall();
 $count=1;
 $arlength=count($rs);
 foreach($rs as $row){
-    if(($arlength-$count)<10){?>
+    if(($arlength-$count)<10){
+?>
         <p>
-        <br><IMG src="<?=$row["link"]?>" width="500" height="auto"><br>
+        <IMG src="/images/pika.jpg" width="500" height="auto">
         </p>
-        <p>name：<?=$row["nam"]?>　data：<?=$row["ymd"]?><br></p>
-        <p><?=$row["com"]?><br><br><br><br></p>
-    <?php}
+<?php
+    }
     $count+=1;
 }
 //$imgg="/images//";
