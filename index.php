@@ -83,6 +83,12 @@ if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
     print "パスワードを入力し、画像ファイルを選択してください。";
 }elseif($_FILES["upfile"]["name"]=="" && $_POST["name"]=="" && $_POST["pass"]=="" && $_POST["comment"]==""){
     print "ああ<br>";
+    $T=time();          
+    $Y=date('Y',$T);
+    $M=date('m',$T);
+    $D=date('d',$T);
+    $YMD="$Y/$M/$D";
+    print $YMD;
 }else{
     print "ニックネームおよびパスワードの入力、画像ファイルの選択は必須です。";
 }
