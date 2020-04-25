@@ -48,7 +48,7 @@ try{
 //１.画像と名前とパスワードが入力されていた場合
 if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
     //画像の保存処理
-    $file_dir='\images\\';
+    $file_dir='/images/';
     $file_path=$file_dir.$_FILES["upfile"]["name"];
     move_uploaded_file($_FILES["upfile"]["tmp_name"],$file_path);//imagesに画像を保存
     //データベースへの書き込み処理
