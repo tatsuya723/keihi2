@@ -73,6 +73,11 @@ body {
     font-size: 25px;
     line-height: 1.5;
 }
+.card-link {
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding: 20px;
+}
 
 
 

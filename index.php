@@ -113,6 +113,10 @@ foreach($rs as $row){
             <p class="card-text0">name:<?=$row["nam"]?>　　　　　　</p>
             <p class="card-text1">data:<?=$row["ymd"]?></p><br>
             <p class="card-text2"><?=$row["com"]?></p><br>
+            <div class="card-link">
+            <a href="http://webcreatorbox.com/about">About</a>
+            <a href="http://webcreatorbox.com/">Website</a>
+            </div>
         </section>
         <br><br><br><br><br><br>
 <?php
