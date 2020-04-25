@@ -67,10 +67,10 @@ if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
         $stmh=$pdo->prepare($sql_in);
         //$stmh->execute(array(':link'=>$img_path,':nam'=>$_POST["name"],':com'=>$_POST["comment"],':pass'=>$_POST["pass"],':y'=>$Y,':m'=>$M,':d'=>$D,':ymd'=>$YMD));
         $stmh->execute(array($img_path,$_POST["name"],$_POST["comment"],$_POST["pass"],$Y,$M,$D,$YMD));
-        //$stmh->execute();   
-    }catch(PDOException $Exception){
+    }    //$stmh->execute();   
+    /*}catch(PDOException $Exception){
         print　"エラー";
-    }
+    */}
 
 }elseif($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]==""){
     print "パスワードを入力してください。";
