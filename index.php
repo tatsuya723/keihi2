@@ -60,14 +60,14 @@ if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
     $YMD="$Y/$M/$D";
     print $YMD;
     $img_path="/images//".$_FILES["upfile"]["name"];    //画像のpath
-    /*$sql_insert="INSERT INTO PU(link,nam,com,pass,year,month,day,ymd)VALUES('.$img_path.','.$_POST["name"].','.$_POST["comment"].','.$_POST["pass"].','.$Y.','.$M.','.$D.','.$YMD.')";
+    $sql_insert="INSERT INTO PU(link, nam, com, pass, year, month, day, ymd)VALUES('$img_path', '$_POST["name"]' ,'$_POST["comment"]', '$_POST["pass"]', '$Y', '$M', '$D', '$YMD')";
     try{
         $stmh=$pdo->query($sql_insert);
         //$stmh->execute(array($img_path,$_POST["name"],$_POST["comment"],$_POST["pass"],$Y,$M,$D,$YMD));
         $stmh->execute();   
     }catch(PDOException $Exception){
         print　"エラー";
-    }*/
+    }
 
 }elseif($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]==""){
     print "パスワードを入力してください。";
@@ -82,13 +82,7 @@ if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
 }elseif($_FILES["upfile"]["name"]=="" && $_POST["name"]!="" && $_POST["pass"]==""){
     print "パスワードを入力し、画像ファイルを選択してください。";
 }elseif($_FILES["upfile"]["name"]=="" && $_POST["name"]=="" && $_POST["pass"]=="" && $_POST["comment"]==""){
-    print "ああ<br>";
-    $T=time();          
-    $Y=date('Y',$T);
-    $M=date('m',$T);
-    $D=date('d',$T);
-    $YMD="$Y/$M/$D";
-    print $YMD;
+    print "<br>";
 }else{
     print "ニックネームおよびパスワードの入力、画像ファイルの選択は必須です。";
 }
