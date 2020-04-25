@@ -69,7 +69,7 @@ if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
         $stmh->execute(array($img_path,$_POST["name"],$_POST["comment"],$_POST["pass"],$Y,$M,$D,$YMD));
         //$stmh->execute();   
     }catch(PDOException $Exception){
-        print "エラー";
+        print　"エラー";
     }
 
 }elseif($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]==""){
