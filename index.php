@@ -111,8 +111,8 @@ foreach($rs as $row){
         <p>
         <IMG src="<?=$row["link"]?>" width="500" height="auto">
         </p>
-        <p>name:<?=$row["nam"]?>　　data:<?=$row["ymd"]?><br><?=$row["com"]?></p>
-        
+        <p>name:<?=$row["nam"]?>　　　　　data:<?=$row["ymd"]?><br><?=$row["com"]?></p>
+        <br><br><br><br><br><br>
 <?php
     }
     $count+=1;
