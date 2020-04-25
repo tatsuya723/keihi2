@@ -84,6 +84,7 @@ body {
     padding: 20px;
 }
 .card {
+    float: left;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
