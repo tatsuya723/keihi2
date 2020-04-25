@@ -82,7 +82,8 @@ body {
     padding: 20px;
 }
 .card {
-    width: 350px;
+    text-align: center;
+    width: 500px;
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px #ccc;
@@ -95,7 +96,7 @@ h1 {
 }
   
 form {
-      text-align:center;
+    text-align:center;
 }
 
 section {
