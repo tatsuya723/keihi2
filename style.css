@@ -56,7 +56,7 @@ body {
 .card-img {
 
     border-radius: 5px 5px 0 0;
-    max-width: 500;
+    max-width: 300;
     height: auto;
 }
 .card-text0 {
@@ -85,11 +85,12 @@ body {
 }
 .card {
     float: left;
+    margin: 90px;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    width: 500px;
-    height: 500px;
+    width: 300px;
+    height: 400px;
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px #ccc;
