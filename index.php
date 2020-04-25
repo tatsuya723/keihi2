@@ -111,8 +111,7 @@ foreach($rs as $row){
         <p>
         <IMG src="<?=$row["link"]?>" width="500" height="auto">
         </p>
-        <br>
-        <p><?=$row["nam"]?><?=$row["ymd"]?><?=$row["com"]?></p>
+        <p>name:<?=$row["nam"]?>　　data:<?=$row["ymd"]?><br><?=$row["com"]?></p>
         
 <?php
     }
