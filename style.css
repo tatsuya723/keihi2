@@ -85,10 +85,9 @@ body {
 }
 .card {
     float: left;
-    margin: 90px;
+    margin: 100px;
     text-align: center;
-    margin-right: auto;
-    margin-left: auto;
+
     width: 300px;
     height: 400px;
     background: #fff;
