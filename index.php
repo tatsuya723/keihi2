@@ -61,7 +61,7 @@ if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
     $img_path="/images//".$_FILES["upfile"]["name"];    //画像のpath
     $sql_insert="INSERT INTO PU(link,nam,com,pass,year,month,day,ymd) VALUES('?','?','?','?','?','?','?','?')";
     try{
-        $stmh=$pdo->prepare($sql_insert);
+        $stmh=$pdo->query($sql_insert);
         $stmh->execute(array($img_path,$_POST["name"],$_POST["comment"],$_POST["pass"],$Y,$M,$D,$YMD));
     }catch(PDOException $Exception){
         print　"エラー";
@@ -101,7 +101,7 @@ $T=time();
 $Y=date('Y',$T);
 $M=date('m',$T);
 $D=date('d',$T);
-$rs = $stmh->fetchall ();
+$rs = $stmh->fetchall();
 $count=1;
 $arlength=count($rs);
 foreach($rs as $row){
@@ -112,6 +112,7 @@ foreach($rs as $row){
         <?=$row["com"]?><br><br><br><br>
         </p>
     <?php}
+    $count+=1;
 }
 //$imgg="/images//";
 //$imgg2=$imgg."pika.jpg";
