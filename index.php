@@ -44,7 +44,7 @@ try{
     <br><input type="submit" value="投稿する"><br>
     </form>
 
-<?php
+<?php/*
 //１.画像と名前とパスワードが入力されていた場合
 if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
     //画像の保存処理
@@ -84,7 +84,7 @@ if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
     print "<br>";
 }else{
     print "ニックネームおよびパスワードの入力、画像ファイルの選択は必須です。";
-}
+}*/
 ?>
 
 <?php
@@ -102,7 +102,7 @@ $T=time();
 $Y=date('Y',$T);
 $M=date('m',$T);
 $D=date('d',$T);
-$rs = $stmh->fetchall();
+$rs=$stmh->fetchall();
 $count=1;
 $arlength=count($rs);
 foreach($rs as $row){
