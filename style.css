@@ -78,7 +78,15 @@ body {
     border-top: 1px solid #eee;
     padding: 20px;
 }
-
+.card-content {
+    padding: 20px;
+}
+.card {
+    width: 350px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #ccc;
+}
 
 
 
