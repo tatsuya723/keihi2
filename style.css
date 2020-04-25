@@ -87,7 +87,6 @@ body {
     padding: 20px;
 }
 .card {
-    max-width: 50%;
     text-align: center;
     width: 500px;
     height: 150px;
@@ -109,5 +108,7 @@ form {
 section {
     text-align:center;
 }
-
+p {
+    text-align: center;
+}
 
