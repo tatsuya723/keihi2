@@ -87,10 +87,10 @@ if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
 }*/
 ?>
 
-<?php/*
+<?php
 //直近10件の投稿を表示する。
 //PUテーブルから投稿を全て取得。
-$tab_select="select * from PU";
+$tab_select="SELECT * FROM PU";
 try{
     $stmh=$pdo->query($tab_select);
     $stmh->execute();
@@ -109,15 +109,15 @@ foreach($rs as $row){
     if(($arlength-$count)<10){?>
         <p>
         <br><IMG src="<?=$row["link"]?>" width="500" height="auto"><br>
-        name：<?=$row["nam"]?>　data：<?=$row["ymd"]?><br>
-        <?=$row["com"]?><br><br><br><br>
         </p>
+        <p>name：<?=$row["nam"]?>　data：<?=$row["ymd"]?><br></p>
+        <p><?=$row["com"]?><br><br><br><br></p>
     <?php}
     $count+=1;
 }
 //$imgg="/images//";
 //$imgg2=$imgg."pika.jpg";
-*/
+
 ?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
