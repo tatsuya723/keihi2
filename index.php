@@ -108,11 +108,13 @@ $arlength=count($rs);
 foreach($rs as $row){
     if(($arlength-$count)<10){
 ?>
+    <div class="container">
         <section class="card">
             <p><IMG class="card-img" src="<?=$row["link"]?>"><br>
             <font class="card-text0">name:<?=$row["nam"]?></font>　　　　<font class="card-text1">data:<?=$row["ymd"]?></font></p>
             <p class="card-text2"><?=$row["com"]?></p><br>
         </section>
+    </div>
         <br><br><br><br><br><br><br><br><br><br><br><br>
 <?php
     }
