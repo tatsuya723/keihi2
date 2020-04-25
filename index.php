@@ -44,9 +44,9 @@ try{
     <br><input type="submit" value="投稿する"><br>
     </form>
 
-<?php/*
+<?php
 //１.画像と名前が入力されていた場合
-if(isset($_FILES["upfile"]["name"]) && $_POST["name"]!=""){
+if($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]!=""){
     //画像の保存処理
     $file_dir='C:\Users\Owner\Documents\keihi2\images\\';
     $file_path=$file_dir.$_FILES["upfile"]["name"];
@@ -59,7 +59,7 @@ if(isset($_FILES["upfile"]["name"]) && $_POST["name"]!=""){
     $D=date('d',$T);
     $YMD="$Y/$M/$D";
     $img_path="/images//".$_FILES["upfile"]["name"];    //画像のpath
-    $sql_insert="INSERT INTO PU(link,nam,com,,pass,year,month,day,ymd) VALUES('?','?','?','?','?','?','?','?')";
+    $sql_insert="INSERT INTO PU(link,nam,com,pass,year,month,day,ymd) VALUES('?','?','?','?','?','?','?','?')";
     try{
         $stmh=$pdo->prepare($sql_insert);
         $stmh->execute(array($img_path,$_POST["name"],$_POST["comment"],$_POST["pass"],$Y,$M,$D,$YMD));
@@ -67,22 +67,56 @@ if(isset($_FILES["upfile"]["name"]) && $_POST["name"]!=""){
         print　"エラー";
     }
 
-}*/
+}elseif($_FILES["upfile"]["name"]!="" && $_POST["name"]!="" && $_POST["pass"]==""){
+    print "パスワードを入力してください。";
+}elseif($_FILES["upfile"]["name"]!="" && $_POST["name"]=="" && $_POST["pass"]!=""){
+    print "ニックネームを入力してください。";
+}elseif($_FILES["upfile"]["name"]=="" && $_POST["name"]!="" && $_POST["pass"]!=""){
+    print "画像ファイルを選択してください。";
+}elseif($_FILES["upfile"]["name"]!="" && $_POST["name"]=="" && $_POST["pass"]==""){
+    print "ニックネームとパスワードを入力してください。";
+}elseif($_FILES["upfile"]["name"]=="" && $_POST["name"]=="" && $_POST["pass"]!=""){
+    print "ニックネームを入力し、画像ファイルを選択してください。";
+}elseif($_FILES["upfile"]["name"]=="" && $_POST["name"]!="" && $_POST["pass"]==""){
+    print "パスワードを入力し、画像ファイルを選択してください。";
+}elseif($_FILES["upfile"]["name"]=="" && $_POST["name"]=="" && $_POST["pass"]=="" && $_POST["comment"]==""){
+    print "<br>";
+}else{
+    print "ニックネームおよびパスワードの入力、画像ファイルの選択は必須です。";
+}
 ?>
 
 <?php
-$imgg="/images//";
-$imgg2=$imgg."pika.jpg";
+//直近10日間の投稿を表示する。
+//PUテーブルから投稿を全て取得。
+$tab_select="select * from PU";
+try{
+    $stmh=$pdo->query($tab_select);
+    $stmh->execute();
+}catch(PDOException $Exception){
+    print "エラー:"."データテーブルが見つかりません。<br>";       
+}
+//日付を取得
+$T=time();          
+$Y=date('Y',$T);
+$M=date('m',$T);
+$D=date('d',$T);
+$rs = $stmh->fetchall ();
+$count=1;
+$arlength=count($rs);
+foreach($rs as $row){
+    if(($arlength-$count)<10){?>
+        <p>
+        <br><IMG src="<?=$row["link"]?>" width="500" height="auto"><br>
+        name：<?=$row["nam"]?>　data：<?=$row["ymd"]?><br>
+        <?=$row["com"]?><br><br><br><br>
+        </p>
+    <?php}
+}
+//$imgg="/images//";
+//$imgg2=$imgg."pika.jpg";
 
 ?>
-<p>
-<br><IMG src="<?=$imgg2?>" width="500" height="auto"><br>
-<br><IMG src="<?=$imgg2?>" width="500" height="auto"><br>
-<br><IMG src="<?=$imgg2?>" width="500" height="auto"><br>
-<br><IMG src="<?=$imgg2?>" width="500" height="auto"><br>
-<br><IMG src="<?=$imgg2?>" width="500" height="auto"><br>
-</p>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
   </body>
