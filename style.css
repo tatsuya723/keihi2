@@ -84,10 +84,6 @@ body {
     padding: 20px;
 }
 .card {
-    float: left;
-    margin: 20px;
-    text-align: center;
-
     width: 300px;
     height: 400px;
     background: #fff;
